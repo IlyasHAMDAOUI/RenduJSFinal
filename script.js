@@ -6,53 +6,140 @@ fetch(
   .then((data) => {
     console.log(data);
 
-    const heroContent = document.createElement("div");
+//     const heroContent = document.createElement("div");
+// heroContent.classList.add("heroContent")
+    // nomCommercial
+    const nomCommercial = document.createElement("h1");
+    nomCommercial.textContent = data.nomCommercial;
+    console.log(nomCommercial);
 
-    // function Affichage() {
-        
-        // nomCommercial
-        const nomCommercial = document.createElement("h1");
-        nomCommercial.textContent = data.nomCommercial;
-        console.log(nomCommercial);
-        
-        // phraseAccroche
-        const phraseAccroche = document.createElement("h2");
-        phraseAccroche.textContent = data.phraseAccroche;
-        console.log(phraseAccroche);
-        
-        // texteAppelAction
-        const texteAppelAction = document.createElement("h3");
-        texteAppelAction.textContent = data.texteAppelAction;
-        console.log(texteAppelAction);
-        
-        
-        // bouton meme si je sais pas a quoi sa sert.
-        const btn = document.createElement("button");
-        
-        
-        // avantagesClients
-        const outAvantagesClient = document.createElement("div");
-        const avantagesClients = data.avantagesClients;
-        avantagesClients.forEach((element) => {
-            const paraAvantagesClients = document.createElement("h4");
-            paraAvantagesClients.textContent = element;
-            outAvantagesClient.appendChild(paraAvantagesClients);
-        });
-    // }
-        
-        // Affichage()
-        heroContent.appendChild(nomCommercial);
-        heroContent.appendChild(phraseAccroche);
-        heroContent.appendChild(texteAppelAction);
-        heroContent.appendChild(outAvantagesClient);
-        heroContent.appendChild(btn);
+    // phraseAccroche
+    const phraseAccroche = document.createElement("h2");
+    phraseAccroche.textContent = data.phraseAccroche;
+    console.log(phraseAccroche);
+
+    // texteAppelAction
+    const texteAppelAction = document.createElement("h3");
+    texteAppelAction.textContent = data.texteAppelAction;
+    console.log(texteAppelAction);
+
+    // bouton meme si je sais pas a quoi sa sert.
+    const btn = document.createElement("button");
+    btn.classList.add("bouton")
+    btn.textContent = "Acheter une paire";
+
+    // avantagesClients
+    const outAvantagesClient = document.createElement("div");
+    outAvantagesClient.classList.add("avantage")
+    const avantagesClients = data.avantagesClients;
+    avantagesClients.forEach((element) => {
+      const paraAvantagesClients = document.createElement("h4");
+      paraAvantagesClients.textContent = element;
+      outAvantagesClient.appendChild(paraAvantagesClients);
+    });
+
+    // produits
+
+    const backOutProduits = document.createElement("div");
+    backOutProduits.classList.add("grosProduit");
+    const produits = data.produits;
+    produits.forEach((element) => {
+      const outProduits = document.createElement("div");
+      outProduits.classList.add("produit");
+      
+      const imageUrl = document.createElement("img");
+      imageUrl.src = element["image-url"];
+      imageUrl.alt = element.nom;
+
+      const nom = document.createElement("h5");
+      nom.textContent = element.nom;
+
+      const description = document.createElement("p");
+      description.textContent = element.description;
 
 
-    // console.log(heroContent);
+      outProduits.appendChild(imageUrl);
+      outProduits.appendChild(nom);
+      outProduits.appendChild(description);
 
-    productContainer.appendChild(heroContent);
+      backOutProduits.appendChild(outProduits);
+    });
+
+    //service
+    const backOutServices = document.createElement("div");
+    backOutServices.classList.add("grosProduit");
+    const services = data.services;
+    services.forEach((element) => {
+      const outServices = document.createElement("div");
+      outServices.classList.add("service");
+
+      const nom = document.createElement("h5");
+      nom.textContent = element.nom;
+
+      const description = document.createElement("p");
+      description.textContent = element.description;
+
+      outServices.appendChild(nom);
+      outServices.appendChild(description);
+
+      backOutServices.appendChild(outServices);
+    });
+
+    // temoignages
+    const backOuttemoignages = document.createElement("div");
+    backOuttemoignages.classList.add("grosProduit");
+    const temoignages = data.temoignages;
+    temoignages.forEach((element) => {
+      const outtemoignages = document.createElement("div");
+      outtemoignages.classList.add("temoignage");
+
+      const prenom = document.createElement("h5");
+      prenom.textContent = `profil : ${element.prenom}`;
+
+      const typeExperience = document.createElement("h5");
+      typeExperience.textContent = `experience : ${element.typeExperience}`;
+
+      const commentaire = document.createElement("p");
+      commentaire.textContent = `commentaire : ${element.commentaire}`;
+
+      const note = document.createElement("h6");
+      note.textContent = `note : ${element.note}`;
+
+      outtemoignages.appendChild(prenom);
+      outtemoignages.appendChild(typeExperience);
+      outtemoignages.appendChild(commentaire);
+      outtemoignages.appendChild(note);
+
+      backOuttemoignages.appendChild(outtemoignages);
+    });
+
+
+    // map
+//     function map(map) {
+        
+//         const backOutMap = document.createElement("div");
+//         backOutMap.classList.add("grosProduit");
+//         let map = L.map("map").setView([51.505, -0.09], 13);
+        
+//         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//       attribution:
+//       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+//     }).addTo(map);
+    
+//     L.marker([51.5, -0.09])
+//     .addTo(map)
+//     .bindPopup("A pretty CSS popup.<br> Easily customizable.")
+//     .openPopup();
+// }
+
+    productContainer.appendChild(nomCommercial);
+    productContainer.appendChild(phraseAccroche);
+    productContainer.appendChild(texteAppelAction);
+    productContainer.appendChild(outAvantagesClient);
+    productContainer.appendChild(btn);
+    productContainer.appendChild(backOutProduits);
+    productContainer.appendChild(backOutServices);
+    productContainer.appendChild(backOuttemoignages);
+
+    // productContainer.appendChild(heroContent);
   });
-
-function Affichage(data) {
-  productContainer.innerHTML = "";
-}

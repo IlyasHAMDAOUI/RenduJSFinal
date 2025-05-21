@@ -1,4 +1,125 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --border-radius: 10px;
+  --border-radius-image: 10px 10px 0px 0px;
+}
+/* GENERAL */
+
+#productContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+/* ENTETE */
+h1 {
+  font-size: 18px;
+  margin: 30px;
+}
+
+h2 {
+  align-self: center;
+  font-size: 16px;
+  width: 70%;
+  margin: 30px;
+}
+
+h3 {
+  margin: 30px;
+}
+
+.avantage {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 100%;
+  justify-content: space-evenly;
+  h4 {
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid black;
+  }
+}
+.bouton {
+  font-size: 16px;
+  width: 30%;
+  margin-top: 40px;
+  padding: 10px;
+  align-self: center;
+  border-radius: var(--border-radius);
+}
+
+/* BALISE DIV GENERAL AU 3 */
+.grosProduit {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/* PRODUIT */
+.produit {
+  width: 30%;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+  h5 {
+    margin-inline: 10px;
+    font-size: 14px;
+  }
+  p {
+    margin: 10px;
+    font-size: 12px;
+    padding: 5px;
+  }
+  img {
+    border-radius: var(--border-radius-image);
+    width: 100%;
+  }
+}
+
+/* SERVICE */
+.service {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+/* TEMOIGNAGE */
+.temoignage {
+      width: 25%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  h5:first-of-type {
+        padding-inline: 25px;
+    justify-self: start;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  h5{
+    justify-self: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 12px;
+    padding: 5px;
+  }
 }

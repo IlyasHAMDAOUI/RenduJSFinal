@@ -92,23 +92,24 @@ fetch(
     temoignages.forEach((element) => {
       const outtemoignages = document.createElement("div");
       outtemoignages.classList.add("temoignage");
-
+      
       const prenom = document.createElement("h5");
-      prenom.textContent = `profil : ${element.prenom}`;
+      prenom.textContent = `${element.prenom}`;
+      
+      const note = document.createElement("h6");
+      note.textContent = `${element.note}/5`;
 
       const typeExperience = document.createElement("h5");
-      typeExperience.textContent = `experience : ${element.typeExperience}`;
+      typeExperience.textContent = `${element.typeExperience}`;
 
       const commentaire = document.createElement("p");
       commentaire.textContent = `commentaire : ${element.commentaire}`;
 
-      const note = document.createElement("h6");
-      note.textContent = `note : ${element.note}`;
 
       outtemoignages.appendChild(prenom);
+      outtemoignages.appendChild(note);
       outtemoignages.appendChild(typeExperience);
       outtemoignages.appendChild(commentaire);
-      outtemoignages.appendChild(note);
 
       backOuttemoignages.appendChild(outtemoignages);
     });

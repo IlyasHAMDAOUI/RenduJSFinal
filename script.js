@@ -6,8 +6,8 @@ fetch(
   .then((data) => {
     console.log(data);
 
-//     const heroContent = document.createElement("div");
-// heroContent.classList.add("heroContent")
+    //     const heroContent = document.createElement("div");
+    // heroContent.classList.add("heroContent")
     // nomCommercial
     const nomCommercial = document.createElement("h1");
     nomCommercial.textContent = data.nomCommercial;
@@ -25,12 +25,12 @@ fetch(
 
     // bouton meme si je sais pas a quoi sa sert.
     const btn = document.createElement("button");
-    btn.classList.add("bouton")
+    btn.classList.add("bouton");
     btn.textContent = "Acheter une paire";
 
     // avantagesClients
     const outAvantagesClient = document.createElement("div");
-    outAvantagesClient.classList.add("avantage")
+    outAvantagesClient.classList.add("avantage");
     const avantagesClients = data.avantagesClients;
     avantagesClients.forEach((element) => {
       const paraAvantagesClients = document.createElement("h4");
@@ -46,7 +46,7 @@ fetch(
     produits.forEach((element) => {
       const outProduits = document.createElement("div");
       outProduits.classList.add("produit");
-      
+
       const imageUrl = document.createElement("img");
       imageUrl.src = element["image-url"];
       imageUrl.alt = element.nom;
@@ -56,7 +56,6 @@ fetch(
 
       const description = document.createElement("p");
       description.textContent = element.description;
-
 
       outProduits.appendChild(imageUrl);
       outProduits.appendChild(nom);
@@ -92,10 +91,10 @@ fetch(
     temoignages.forEach((element) => {
       const outtemoignages = document.createElement("div");
       outtemoignages.classList.add("temoignage");
-      
+
       const prenom = document.createElement("h5");
       prenom.textContent = `${element.prenom}`;
-      
+
       const note = document.createElement("h6");
       note.textContent = `${element.note}/5`;
 
@@ -105,7 +104,6 @@ fetch(
       const commentaire = document.createElement("p");
       commentaire.textContent = `commentaire : ${element.commentaire}`;
 
-
       outtemoignages.appendChild(prenom);
       outtemoignages.appendChild(note);
       outtemoignages.appendChild(typeExperience);
@@ -114,24 +112,23 @@ fetch(
       backOuttemoignages.appendChild(outtemoignages);
     });
 
-
     // map
-//     function map(map) {
-        
-//         const backOutMap = document.createElement("div");
-//         backOutMap.classList.add("grosProduit");
-//         let map = L.map("map").setView([51.505, -0.09], 13);
-        
-//         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-//       attribution:
-//       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-//     }).addTo(map);
-    
-//     L.marker([51.5, -0.09])
-//     .addTo(map)
-//     .bindPopup("A pretty CSS popup.<br> Easily customizable.")
-//     .openPopup();
-// }
+    //     function map(map) {
+
+    //         const backOutMap = document.createElement("div");
+    //         backOutMap.classList.add("grosProduit");
+    //         let map = L.map("map").setView([51.505, -0.09], 13);
+
+    //         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    //       attribution:
+    //       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //     }).addTo(map);
+
+    //     L.marker([51.5, -0.09])
+    //     .addTo(map)
+    //     .bindPopup("A pretty CSS popup.<br> Easily customizable.")
+    //     .openPopup();
+    // }
 
     productContainer.appendChild(nomCommercial);
     productContainer.appendChild(phraseAccroche);

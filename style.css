@@ -5,8 +5,8 @@
 :root {
   --border-radius: 10px;
   --border-radius-image: 10px 10px 0px 0px;
-  --background-color: rgb(255, 145, 0);
-  --color-texte: #ffffff;
+  --background-color: #ffffff;
+  --color-texte: rgb(255, 145, 0);
 }
 
 /* GENERAL */

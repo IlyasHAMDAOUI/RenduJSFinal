@@ -33,7 +33,7 @@ h2 {
   color: #6b705c;
   border-radius: 10px;
   padding: 10px;
-  align-self: center;
+  place-self: center;
   font-size: 16px;
   width: 70%;
   margin: 30px;
@@ -50,12 +50,19 @@ h3 {
   align-self: center;
   width: 100%;
   color: var(--color-texte);
+  justify-content: space-around;
   h4 {
     font-size: 14px;
     width: 30%;
     padding: 10px;
+    border-radius: var(--border-radius);
     border: 1px solid rgb(195, 195, 195);
     background-color: var(--background-color);
+  }
+
+  h4:hover{
+    background-color: var(--color-texte);
+    color: var(--background-color);
   }
 }
 
@@ -100,9 +107,10 @@ h3 {
 
 /* PRODUIT */
 .produit {
-  width: 49%;
+  width: 45%;
   color: var(--color-texte);
-  margin: 5px;
+  margin: 20px;
+
   h5 {
     justify-self: start;
     margin-inline: 10px;
@@ -117,13 +125,17 @@ h3 {
     width: 100%;
   }
 }
+.produit:hover{
+  scale: 1.1;
+  background-color: var(--color-texte);
+  color: var(--background-color);
+  border-radius: var(--border-radius);
+img{
+  border-radius: var(--border-radius-image);
+}
+}
 
 /* SERVICE */
-/* .service:first-of-type{
-
-  border-radius: 10px 0 0 10px;
-} */
-
 .service {
   width: 30%;
   padding: 10px;
@@ -170,3 +182,11 @@ h3 {
     width: 25%;
   }
 }
+
+/* MAP */
+ #map {
+        margin: 40px;
+        height: 300px;
+        width: 50%;
+        place-self: center;
+      }

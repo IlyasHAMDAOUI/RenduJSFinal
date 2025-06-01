@@ -8,6 +8,7 @@ fetch(
 
     const heroContent = document.createElement("div");
     heroContent.classList.add("heroContent");
+
     // nomCommercial
     const nomCommercial = document.createElement("h1");
     nomCommercial.textContent = data.nomCommercial;
@@ -40,6 +41,7 @@ fetch(
 
       const paraAvantagesClients = document.createElement("h4");
       paraAvantagesClients.textContent = element;
+      
       outAvantagesClient.appendChild(paraAvantagesClients);
       outAvantagesClient.appendChild(image)
     });
@@ -48,6 +50,8 @@ fetch(
 
     const backOutProduits = document.createElement("div");
     backOutProduits.classList.add("grosProduit");
+    backOutProduits.id= "pro";
+    // backOutProduits.id("pro");
     const produits = data.produits;
     produits.forEach((element) => {
       const outProduits = document.createElement("div");
@@ -73,6 +77,8 @@ fetch(
     //service
     const backOutServices = document.createElement("div");
     backOutServices.classList.add("grosProduit");
+    backOutServices.id= "ser";
+
     const services = data.services;
     services.forEach((element) => {
       const outServices = document.createElement("div");
@@ -93,6 +99,8 @@ fetch(
     // temoignages
     const backOuttemoignages = document.createElement("div");
     backOuttemoignages.classList.add("grosProduit");
+    backOuttemoignages.id= "tem";
+
     const temoignages = data.temoignages;
     temoignages.forEach((element) => {
       const outtemoignages = document.createElement("div");

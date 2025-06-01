@@ -24,18 +24,41 @@
     ></script>
   </head>
   <body>
+    <header>
+      <div>
+        <h2>BonPied</h2>
+      </div>
+      <nav>
+        <ul>
+          <a href="#pro"><li>Produit</li></a>
+          <a href="#ser"><li>Service</li></a>
+          <a href="#tem"><li>Temoignage</li></a>
+          <a href="#map"> <li>Map</li></a>
+        </ul>
+      </nav>
+    </header>
     <section id="productContainer"></section>
-    <div id="map"></div>
+    <footer>
+      <div id="map"></div>
+      <div>
+        <h2>BonPied - Sneakers Éco-sourcés à Rennes</h2>
+        <p>By Muhammad Ilyas Hamdaoui</p>
+      </div>
+      </footer>
     <script src="script.js"></script>
 
     <script>
-      var map = L.map('map').setView([45.741429346346024, 4.839417331016642], 17);
-var marker = L.marker([45.741429346346024, 4.839417331016642]).addTo(map);
-      
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+      var map = L.map("map").setView(
+        [45.741429346346024, 4.839417331016642],
+        17
+      );
+      var marker = L.marker([45.741429346346024, 4.839417331016642]).addTo(map);
+
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
     </script>
   </body>
 </html>

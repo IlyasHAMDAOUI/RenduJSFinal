@@ -21,7 +21,54 @@
   width: 100%;
   background-color: transparent;
 }
-
+/* header */
+header {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  align-items: center;
+  background: var(--color-texte);
+  color: white;
+  div {
+    display: inline-block;
+    width: 25%;
+    h2 {
+      color: var(--background-color);
+      text-align: center;
+    }
+  }
+  nav {
+    width: 75%;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      li {
+        list-style: none;
+        color: #ff9100;
+        padding: 10px;
+        border-radius: 10px;
+        background: #ffffff;
+      }
+      a {
+        text-decoration: none;
+        color: #ff9100;
+      }
+    }
+  }
+}
+header a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+li:hover {
+  scale: 1.1;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  background: #ffaa3a;
+  border: 1px solid #6b705c;
+}
 /* ENTETE */
 h1 {
   font-size: 2.5rem;
@@ -60,7 +107,7 @@ h3 {
     background-color: var(--background-color);
   }
 
-  h4:hover{
+  h4:hover {
     background-color: var(--color-texte);
     color: var(--background-color);
   }
@@ -68,41 +115,31 @@ h3 {
 
 .bouton {
   font-size: 16px;
-  width: 30%;
+  width: 20%;
   margin-top: 40px;
   padding: 10px;
   align-self: center;
   border-radius: var(--border-radius);
   background-color: var(--background-color);
-  border: none;
+  border: 1px solid black;
 }
 
 .bouton:hover {
   box-shadow: 0 0 1px 1px gray;
   background-color: white;
-  /* color: var(--color-texte); */
   border: none;
 }
 
 /* BALISE DIV GENERAL AU 3 */
-.grosProduit:first-child {
-  width: 100%;
-  gap: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  justify-content: start;
-}
 .grosProduit {
   width: 100%;
-  /* gap: 20px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 50px;
   place-content: center;
+  /* margin-inline: 30px; */
 }
 
 /* PRODUIT */
@@ -125,14 +162,20 @@ h3 {
     width: 100%;
   }
 }
-.produit:hover{
+
+#pro {
+  place-content: start;
+  margin-inline: 30px;
+}
+
+.produit:hover {
   scale: 1.1;
   background-color: var(--color-texte);
   color: var(--background-color);
   border-radius: var(--border-radius);
-img{
-  border-radius: var(--border-radius-image);
-}
+  img {
+    border-radius: var(--border-radius-image);
+  }
 }
 
 /* SERVICE */
@@ -140,10 +183,10 @@ img{
   width: 30%;
   padding: 10px;
   border: 1px solid rgb(195, 195, 195);
-  /* border-radius:0 10px 10px 0 ; */
+
+  border-radius: var(--border-radius);
   color: var(--color-texte);
   background-color: var(--background-color);
-
   h5 {
     font-size: 16px;
     margin-bottom: 10px;
@@ -152,7 +195,13 @@ img{
     font-size: 14px;
   }
 }
-
+.service:hover {
+  color: var(--background-color);
+  background-color: var(--color-texte);
+}
+#ser {
+  gap: 10px;
+}
 /* TEMOIGNAGE */
 .temoignage {
   width: 30%;
@@ -160,6 +209,7 @@ img{
   border: 1px solid rgb(195, 195, 195);
   background-color: var(--background-color);
   color: var(--color-texte);
+  border-radius: var(--border-radius);
 
   h5:first-of-type {
     display: inline-block;
@@ -182,11 +232,33 @@ img{
     width: 25%;
   }
 }
-
+.temoignage:hover {
+  background: var(--color-texte);
+  color: var(--background-color);
+}
+#tem {
+  gap: 10px;
+}
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  background: var(--color-texte);
+  div {
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    color: white;
+    h2 {
+      color: white;
+    }
+  }
+}
 /* MAP */
- #map {
-        margin: 40px;
-        height: 300px;
-        width: 50%;
-        place-self: center;
-      }
+#map {
+  margin: 40px;
+  height: 300px;
+  width: 50%;
+  place-self: center;
+}
